@@ -17,6 +17,8 @@ found = False
 while not found:
     print("Guess what it is?")
     guess = input()
+    if guess == magicNumber:
+        found = True
 
     
   
