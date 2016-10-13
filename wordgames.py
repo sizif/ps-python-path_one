@@ -1,5 +1,5 @@
 def get_random_word():
-    return "pizza"
+    words = ["pizza", "cheese", "apples"]
 
 def play_word_game():
     strikes = 0
