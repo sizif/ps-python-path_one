@@ -1,7 +1,7 @@
 import random
 
 print("Hello, what is your favorite number?")
-number = input()
+number = int(input())
 
 print("Your favorite number is " + str(number))
 
