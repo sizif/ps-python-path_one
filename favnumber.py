@@ -23,6 +23,7 @@ while not found:
         print("Too low")
     if guess > magicNumber:
         print("Too high")
+print("You got it!")
 
     
   
