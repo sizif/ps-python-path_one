@@ -1,3 +1,6 @@
+def get_random_word():
+    return "pizza"
+
 def play_word_game():
     word = get_random_word() 
 
