@@ -1,2 +1,4 @@
+def playWordGame():
+
 print("Game started")
-playGame()
+playWordGame()
