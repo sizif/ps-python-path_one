@@ -5,4 +5,6 @@ number = input()
 
 print("Your favorite number is " + str(number))
 
-magicNumber = random.randint(1, 100)
+minNumber = 1
+maxNumber = 100
+magicNumber = random.randint(minNumber, maxNumber)
