@@ -10,6 +10,14 @@ def play_word_game():
     
     while playing:
         strikes += 1
+        
+        if strikes >= max_strikes:
+            playing = False
+            
+    if strikes >= max_strikes:
+        print("Loser!")
+    else:
+        print("Winner!")
 
 print("Game started")
 play_word_game()
