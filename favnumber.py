@@ -15,3 +15,8 @@ print(message.format(minNumber, maxNumber))
 found = False
 
 while not found:
+    print("Guess what it is?")
+    guess = input()
+
+    
+  
