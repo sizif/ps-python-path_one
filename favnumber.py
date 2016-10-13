@@ -19,6 +19,8 @@ while not found:
     guess = input()
     if guess == magicNumber:
         found = True
+    if guess < magicNumber:
+        print("Too low")
 
     
   
