@@ -1,1 +1,2 @@
 print("Game started")
+playGame()
