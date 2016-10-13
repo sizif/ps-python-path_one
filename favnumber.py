@@ -8,4 +8,5 @@ print("Your favorite number is " + str(number))
 minNumber = 1
 maxNumber = 100
 magicNumber = random.randint(minNumber, maxNumber)
-print(magicNumber)
+
+message = "The magic number is between {0} and {1}"
