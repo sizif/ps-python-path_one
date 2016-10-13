@@ -1,6 +1,6 @@
-def playWordGame():
+def play_word_game():
     print("playing")  
 
 print("Game started")
-playWordGame()
+play_word_game()
 print("Game over")
