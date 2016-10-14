@@ -3,10 +3,14 @@
 def go_shopping():
   cart = []
   
-  while True: # (1) potential infinite loop
-    item = get_item()
-    if item == "": # (2) if the user just presses enter
-        break # (3) exit the loop
-    cart.append(item)
-
+    while True: 
+        item = get_item()
+        if item == "": 
+            break 
+        cart.append(item)
+        
+    print(cart) # (1) show the contents of the cart
+    print("Finished!") # (2) explicitly tell the user we're finished
+    
+    
 go_shopping()
