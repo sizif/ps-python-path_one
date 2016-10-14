@@ -20,9 +20,14 @@ def process_letter(letter, secret_word, blanked_word):
     for i in range(0, len(secret_word)):
         if secret_word[i] == letter:
             result = True
-            blanked_word[i] = letter # (2) ...and this line here should now work
+            blanked_word[i] = letter
     
     return result
+
+def print_strikes(number_of_strikes): # (4) define print_strikes
+    for i in range(0, number_of_strikes):
+        print("X ", end="")
+    print("")
 
 def play_word_game():
     strikes = 0
@@ -30,7 +35,7 @@ def play_word_game():
     playing = True
     
     word = get_random_word()
-    blanked_word = list("_" * len(word)) # (1) I'll convert the string to a list...
+    blanked_word = list("_" * len(word))
     
     while playing:
         show_word(blanked_word)
@@ -39,9 +44,13 @@ def play_word_game():
         
         if not found:
             strikes += 1
+            print_strikes(strikes) # (1) call print_strikes, pass it 'strikes'
         
         if strikes >= max_strikes:
             playing = False
+        
+        if not "_" in blanked_word: # (2) check if word successfully completed
+            playing = False # (3) stop playing
             
     if strikes >= max_strikes:
         print("Loser!")
