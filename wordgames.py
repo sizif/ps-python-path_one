@@ -14,7 +14,7 @@ def play_word_game():
     blanked_word = "_" * len(word)
     
     while playing:
-        show_blanked_word(blanked_word)
+        show_word(blanked_word)
         
         strikes += 1
         
