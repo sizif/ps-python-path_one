@@ -14,12 +14,13 @@ def get_guess():
 	print("Enter a letter: ")
 	return input()
 
-def process_letter(letter, secret_word):
+def process_letter(letter, secret_word, blanked_word): # (2) process_letter
     result = False
     
     for i in range(0, len(secret_word)):
         if secret_word[i] == letter:
             result = True
+            blanked_word[i] = letter # (3) process_letter
     
     return result
 
@@ -34,7 +35,7 @@ def play_word_game():
     while playing:
         show_word(blanked_word)
         letter = get_guess()
-        found = process_letter(letter, word)
+        found = process_letter(letter, word, blanked_word) # (1) process_letter
         
         strikes += 1
         
