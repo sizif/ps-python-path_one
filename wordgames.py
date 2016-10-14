@@ -25,6 +25,7 @@ def play_word_game():
     while playing:
         show_word(blanked_word)
         letter = get_guess()
+        process_letter(letter, word)
         
         strikes += 1
         
