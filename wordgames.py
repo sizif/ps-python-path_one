@@ -15,7 +15,9 @@ def get_guess():
 	return input()
 
 def process_letter(letter, secret_word):
+    result = False
     
+    return result
 
 def play_word_game():
     strikes = 0
@@ -28,7 +30,7 @@ def play_word_game():
     while playing:
         show_word(blanked_word)
         letter = get_guess()
-        process_letter(letter, word)
+        found = process_letter(letter, word)
         
         strikes += 1
         
