@@ -1,3 +1,5 @@
+import random
+
 def get_random_word():
     words = ["pizza", "cheese", "apples"]
     word = words[random.randint(0, len(words)-1)]
