@@ -7,6 +7,7 @@ def get_random_word():
 
 def show_word(word):
     for character in word:
+        print(character)
 
 def play_word_game():
     strikes = 0
