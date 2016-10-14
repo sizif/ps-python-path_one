@@ -14,6 +14,9 @@ def get_guess():
 	print("Enter a letter: ")
 	return input()
 
+def process_letter(letter, secret_word):
+    
+
 def play_word_game():
     strikes = 0
     max_strikes = 3
