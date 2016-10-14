@@ -4,20 +4,14 @@ def get_order():
 
     command = line[:1] 
     item = line[2:] 
-    order = command, item # (i) To create a tupple (another sequence type to manage multiple items):
-    # (i2) I can also create a tuple with round brackets: order = (command, item)
-    # (i3) Tupple with in operator: "apples" in order 
-    # the above returns True
-    # (i4) Just like a list, I can say, what's offset[0], what's offset[1], like this:
-    # order[0]
-    # order[1]
-    # a tuple is like a list, but it's faster and safer (cuz you can't append or delete from it)
-    # "tuple unpacking": c,i = order
+
+    return command, item # (1) return command and item in def get_order()
+    
 def go_shopping():
     cart = []
   
     while True: 
-        item = get_order()
+        order = get_order() # (2) 'order' instead of 'item' for var name in def go_shopping(), because it's a command on an item instead of just some item
         if item == "": 
             break
         cart.append(item)
