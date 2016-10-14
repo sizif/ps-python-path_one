@@ -37,7 +37,8 @@ def play_word_game():
         letter = get_guess()
         found = process_letter(letter, word, blanked_word)
         
-        strikes += 1
+        if not found:
+            strikes += 1
         
         if strikes >= max_strikes:
             playing = False
