@@ -17,6 +17,8 @@ def get_guess():
 def process_letter(letter, secret_word):
     result = False
     
+    for i in range(0, len(secret_word))
+    
     return result
 
 def play_word_game():
