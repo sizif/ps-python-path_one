@@ -17,7 +17,9 @@ def get_guess():
 def process_letter(letter, secret_word):
     result = False
     
-    for i in range(0, len(secret_word))
+    for i in range(0, len(secret_word)):
+        if secret_word[i] == letter:
+            result = True
     
     return result
 
