@@ -9,6 +9,10 @@ def show_word(word):
     for character in word:
         print(character, end="")
     print("")
+    
+def get_guess():
+	print("Enter a letter: ")
+	return input()
 
 def play_word_game():
     strikes = 0
