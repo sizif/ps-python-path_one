@@ -1,4 +1,6 @@
-
+def get_item(): # (1) define get_item function
+    print("Please enter an item:") # (2) ask the user to enter an item
+    return input() # (3) return what the user entered
 
 def go_shopping():
   cart = []
