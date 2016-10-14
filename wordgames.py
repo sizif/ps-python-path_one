@@ -7,7 +7,7 @@ def get_random_word():
 
 def show_word(word):
     for character in word:
-        print(character, end="")
+        print(character, " ", end="") # (1) separate underlines
     print("")
     
 def get_guess():
@@ -24,7 +24,7 @@ def process_letter(letter, secret_word, blanked_word):
     
     return result
 
-def print_strikes(number_of_strikes): # (4) define print_strikes
+def print_strikes(number_of_strikes):
     for i in range(0, number_of_strikes):
         print("X ", end="")
     print("")
@@ -44,13 +44,13 @@ def play_word_game():
         
         if not found:
             strikes += 1
-            print_strikes(strikes) # (1) call print_strikes, pass it 'strikes'
+            print_strikes(strikes)
         
         if strikes >= max_strikes:
             playing = False
         
-        if not "_" in blanked_word: # (2) check if word successfully completed
-            playing = False # (3) stop playing
+        if not "_" in blanked_word:
+            playing = False
             
     if strikes >= max_strikes:
         print("Loser!")
