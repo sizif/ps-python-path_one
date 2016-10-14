@@ -1,5 +1,6 @@
 
 
-def go_shopping(): # (1) ----------------------- new project, shopping
+def go_shopping():
+  []
 
 go_shopping()
