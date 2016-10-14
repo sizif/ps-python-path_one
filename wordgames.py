@@ -4,7 +4,10 @@ def get_random_word():
     words = ["pizza", "cheese", "apples"]
     word = words[random.randint(0, len(words)-1)]
     return word
-    
+
+def show_word(word):
+    print(word)
+
 def play_word_game():
     strikes = 0
     max_strikes = 3
