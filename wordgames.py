@@ -11,7 +11,7 @@ def play_word_game():
     playing = True
     
     word = get_random_word()
-    blanked_word = 
+    blanked_word = "_" * 6
     
     while playing:
         strikes += 1
