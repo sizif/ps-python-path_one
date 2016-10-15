@@ -34,8 +34,6 @@ def go_shopping():
     while True:
         order = get_order()
 
-        process_order(order, cart)
-
         if not process_order(order, cart):
             break
 
@@ -45,4 +43,4 @@ def go_shopping():
     
 go_shopping()
 
-# (1) def delete_from_cart; if item in cart: cart[item] -= 1;
+# -(1) debug the go_shopping() function definition not to make duplicate count
