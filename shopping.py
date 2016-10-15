@@ -21,7 +21,7 @@ def process_order(order, cart):
             break
         # cart.append(item)
         # (1) I can no longer just cart.append(item), I have to figure out what's in the order
-        # (2) So it might be a good idea to do some top-down design and just hand this off to another function: (3)
+        # (2) So it might be a good idea to do some top-down design and just hand this off to another function: (3) 
         
     print(cart)
     print("Finished!")
