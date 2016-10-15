@@ -3,6 +3,13 @@ class Classroom:
     def __init__(self):
         self._people = []
 
+    def add_person(self, person): # (1)
+        self._people.append(person) # (2)
+
+    def remove_person(self, person):
+        self._people.remove(person) # (3)
+
+
 class Person:
 
     def __init__(self, name):
@@ -12,9 +19,9 @@ class Person:
         print(id(self)) # (3)
         print("Hello, ", self.name)
 
-# (1) But let's raise this to a new level of abstraction, and create sth a bit more interesting and focused on our goals
-# (2) So I'll create a new class, called Classroom
-# (3) the _people will be the attribute of every object that gets instantiated from this class, and I'll set it to a new empty list
-# (4) the _people is a convention that shows that _people is only to be used on methods on this class, so other programmers are not
-# (4) supposed to touch that variable
-# (5) So I can to this: room = Classroom(); room._people = ...; but I'm not supposed to, it's sort of an agreement not to do it
+room = Classroom()
+
+# (1) let me def add_person, that takes the self parameter, and a person object
+# (2) and when it get's invoked, we will walk up to the people list and we will append that person.
+# (3) let's also remove someone from the classroom
+# (4) And now I can use my room
