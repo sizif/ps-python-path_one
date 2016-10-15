@@ -1,3 +1,8 @@
+class Cart: # (1)
+
+    def __init__(self):
+        self._contents = dict() # (2)
+
 def get_order():
     print("[command] [item] (command is a to add, d to delete, q to quit)")
     line = input()
@@ -43,9 +48,7 @@ def go_shopping():
     
 go_shopping()
 
-# We'll convert this program to oop concepts. When I look at this program, I see 2 broad concepts:
-# A lot of logic around order, getting it, processing it...
-# A lot of logic around cart.
-# THE FACT THAT SO MANY METHODS HAVE A CART PARAMETER, TELLS ME WE SHOULD PROBABLY HAVE A CART OBJECT, with methods that manipulate a cart attribute that's part of the class.
-# That way we don't have to pass the cart around, it's already encapsulated in the object.
-# So my next step, I'll make a cart class, and maybe an order class too
+# THE CART BEFORE THE ORDER
+# (1) First we'll raise the level of abstraction by building the Cart class
+# (2) I can now use a shopping cart that encapsulates that dictionary and exposes methods that are specific to shopping carts, things like maybe processing orders, adding and deleting from the cart.
+
