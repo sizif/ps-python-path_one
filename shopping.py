@@ -7,20 +7,25 @@ def get_order():
 
     return command, item
 
+def add_to_cart(item, cart): # (4)
+    if not item in cart: # (4)
+        cart[item] = 0 # (4)
+    cart(item) += 1 # (5)
+
 def process_order(order, cart):
     command, item = order
 
     if command == "a":
-        cart.add(item)
+        add_to_cart(item, cart) # (2)
     elif command == "d" and item in cart:
-        cart.remove(item)
+        delete_from_cart(item, cart) # (3)
     elif command == "q":
         return False
 
     return True
 
 def go_shopping():
-    cart = set()
+    cart = dict() # (1)
 
     while True:
         order = get_order()
@@ -36,28 +41,10 @@ def go_shopping():
     
 go_shopping()
 
-# DICTIONARIES:
-# To construct a dict, I can use a built-in function dict():
-# adict = dict() constructs a new empty dictionary
-# or I can create it just like a set, with {} braces, but while the set had single items,
-# a dictionary holds key-value pairs:
-# adict = { "scott":"@OdeToCode", "pluralsight":"@Pluralsight" }
-# but I cant offset into them like this: adict[0] as this returns a KeyError
-# Instead, I use the value from the key:value pair:
-# adict["scott"]
-# You can also iterate through a dictionary, and return keys:
-# for key in adict:
-#   print(key)
-# And you can return values too:
-# for key in adict:
-#   print(adict[key]) # "give me a value for that particular key"
-# Finally, I can print them both out:
-# for key in adict:
-#   print(key, adict[key])
-# "Dear dictionary, here's a new value to store:
-# adict["count"] = 4
-
-# THE KEYS DON'T HAVE TO BE STRINGS
-# They can be different types of objects.
-
-
+# (1) To be able to take batches of same things, we'll start by changing the cart from a set to a dictionary
+# (2) There will have to be a bit more logic, so in def process_order, let's change 'cart.add(item)' to a function call, ('add_to_cart')
+# (2) We'll pass it item and cart, and this function can figure out if there is sth already there and ++ it, or create a key:value pair if it's not there
+# (3) Likewise, instead of just removing from the cart, we can delete_from_cart, given the item and the cart
+# (4) Now lets def add_to_cart(), that takes the item and the cart, and ask it if there are "apples" in cart, which returns T or F
+# (4) So if the user wants to add apples to the cart we'll do it but we'll set the initial counter to 0, and only if there's no apples there
+# (5) And finally, we'll always += 1 the item
