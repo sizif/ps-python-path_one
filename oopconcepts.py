@@ -7,9 +7,8 @@ class Person:
     def say_hello(self):
         print("Hello, ", self.name)
 
-p1 = Person()
-p1.name = "Allen"
+p1 = Person("Scott")
 p1.say_hello()
 
-p2 = Person()
+p2 = Person("Allen")
 p2.say_hello()
