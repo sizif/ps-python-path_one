@@ -3,11 +3,15 @@ class Classroom:
     def __init__(self):
         self._people = []
 
-    def add_person(self, person): # (1)
-        self._people.append(person) # (2)
+    def add_person(self, person):
+        self._people.append(person)
 
     def remove_person(self, person):
-        self._people.remove(person) # (3)
+        self._people.remove(person)
+
+    def greet(self): # (1)
+        for person in self._people:
+            person.say_hello()
 
 class Person:
 
@@ -15,15 +19,16 @@ class Person:
         self.name = name
 
     def say_hello(self):
-        print(id(self)) # (3)
+        print(id(self))
         print("Hello, ", self.name)
 
 room = Classroom()
-room.add_person(Person("Scott")) # (1) (2)
-room.add_person(Person("Poonam")) # (3)
-room.add_person(Person("Paul")) # (3)
+room.add_person(Person("Scott"))
+room.add_person(Person("Poonam"))
+room.add_person(Person("Paul"))
+
+room.greet() # (2)
 
 
-# (1) Let's add Scott to the room
-# (2) I don't need to keep a variable around to manage a pointer to that person, I'm just going to let the classroom take care of that
-# (3) Let's add more people
+# (1) So far I can only add and remove people, but let's add a method that'll deal with the whole group, greet them
+# (2) Alright so let's greet everybody (plus we can still see their addresses)
