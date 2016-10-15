@@ -1,4 +1,8 @@
-# CREATE OUR OWN OBJECT
+class Classroom:
+
+    def __init__(self):
+        self._people = []
+
 class Person:
 
     def __init__(self, name):
@@ -8,10 +12,9 @@ class Person:
         print(id(self)) # (3)
         print("Hello, ", self.name)
 
-room = [] # (2)
-room.append() # (3)
-
-
-# (1) Combining Person and list, imagine we had to write an application for managing a classroom
-# (2) So we'll have to handle multiple Person objects and group them into a specific classroom
-# (3) Now I can start appending Person objects into that list
+# (1) But let's raise this to a new level of abstraction, and create sth a bit more interesting and focused on our goals
+# (2) So I'll create a new class, called Classroom
+# (3) the _people will be the attribute of every object that gets instantiated from this class, and I'll set it to a new empty list
+# (4) the _people is a convention that shows that _people is only to be used on methods on this class, so other programmers are not
+# (4) supposed to touch that variable
+# (5) So I can to this: room = Classroom(); room._people = ...; but I'm not supposed to, it's sort of an agreement not to do it
