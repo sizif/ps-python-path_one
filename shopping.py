@@ -12,7 +12,7 @@ def process_order(order, cart):
 
     if command == "a":
         cart.append(item)
-    elif command == "d":
+    elif command == "d" and item in cart: # (1) let's make sure the item to be removed is in the cart!
         cart.remove(item)
     elif command == "q":
         return False
@@ -35,5 +35,3 @@ def go_shopping():
     
     
 go_shopping()
-
-# (1) At this point, the code works, but we get a runtime error if we try to delete something that's not in the list
