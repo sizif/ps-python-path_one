@@ -36,4 +36,4 @@ def go_shopping():
     
 go_shopping()
 
-# (1) Duplicate entry scenario: If I add apples two times, I'll have 'apples' in two places in the list with the code as it is. I'll fix this is the next commit.
+# (1) We have duplicate entry scenario: If I add apples two times, I'll have 'apples' in two places in the list with the code as it is. I'll fix this is the next commit.
