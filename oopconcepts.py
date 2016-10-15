@@ -9,7 +9,6 @@ class Classroom:
     def remove_person(self, person):
         self._people.remove(person) # (3)
 
-
 class Person:
 
     def __init__(self, name):
@@ -20,8 +19,10 @@ class Person:
         print("Hello, ", self.name)
 
 room = Classroom()
+room.add_person(Person("Scott")) # (1) (2)
+room.add_person(Person("Poonam")) # (3)
+room.add_person(Person("Paul")) # (3)
 
-# (1) let me def add_person, that takes the self parameter, and a person object
-# (2) and when it get's invoked, we will walk up to the people list and we will append that person.
-# (3) let's also remove someone from the classroom
-# (4) And now I can use my room
+# (1) Let's add Scott to the room
+# (2) I don't need to keep a variable around to manage a pointer to that person, I'm just going to let the classroom take care of that
+# (3) Let's add more people
