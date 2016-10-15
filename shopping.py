@@ -26,7 +26,7 @@ def go_shopping():
         order = get_order()
 
         process_order(order, cart)
-        # (1) If process_order returns false the 'not' will turn that into a true and we'll be inside this if statement:
+
         if not process_order(order, cart):
             break
 
@@ -36,4 +36,4 @@ def go_shopping():
     
 go_shopping()
 
-
+# (1) At this point, the code works, but we get a runtime error if we try to delete something that's not in the list
