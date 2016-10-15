@@ -43,7 +43,7 @@ cart = Cart()
 order = Order()
 order.get_input()
 
-while not order.quit # (1)
+while not order.quit: # (1)
     # (2)
     order = Order() # (3)
     order.get_input() # (4)
