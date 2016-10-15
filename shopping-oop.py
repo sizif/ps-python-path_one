@@ -3,6 +3,10 @@ class Cart: # (1)
     def __init__(self):
         self._contents = dict() # (2)
 
+class Order: # (4)
+
+
+
 def get_order():
     print("[command] [item] (command is a to add, d to delete, q to quit)")
     line = input()
@@ -33,22 +37,16 @@ def process_order(order, cart):
 
     return True
 
-def go_shopping():
-    cart = dict()
+cart = Cart() # (3)
+order = Order() # (5)
+order.get_input()
 
-    while True:
-        order = get_order()
-
-        if not process_order(order, cart):
-            break
-
-    print(cart)
-    print("Finished!")
-    
-    
-go_shopping()
-
-# THE CART BEFORE THE ORDER
-# (1) First we'll raise the level of abstraction by building the Cart class
-# (2) I can now use a shopping cart that encapsulates that dictionary and exposes methods that are specific to shopping carts, things like maybe processing orders, adding and deleting from the cart.
-
+# (1) I'll leave most of the existing code in, but I'll rethink def go_shopping(), because instead of the cart being a dictionary, it's now an object of the cart class
+# (2) that encapsulates a dictionary
+# (3) I want the cart to be an instance of the shopping cart class.
+# (4) And the next thing I want to do is get an order from the user, so I can put something in the cart.
+# (4) And how do I want to represent an order? Well, I do see that order is used throughout the program too. So I'll add an order class definition.
+# (5) Planning classes, give them a SINGLE responsibility (small, focused classes)
+# (5) Another approach to OOP is "write the code that will use the class, before you write the class"
+# (5) So lets write some code that will use an order, first I'll instantiate it...
+# (6) ...and I'm thinking, order might be the place to get input, so I'll let user type something, so it knows what the order is
