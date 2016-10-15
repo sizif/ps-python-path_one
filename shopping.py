@@ -12,7 +12,7 @@ def process_order(order, cart):
 
     if command == "a":
         cart.append(item)
-    elif command == "d" and item in cart: # (1) let's make sure the item to be removed is in the cart!
+    elif command == "d" and item in cart:
         cart.remove(item)
     elif command == "q":
         return False
@@ -35,3 +35,5 @@ def go_shopping():
     
     
 go_shopping()
+
+# (1) Duplicate entry scenario: If I add apples two times, I'll have 'apples' in two places in the list with the code as it is. I'll fix this is the next commit.
