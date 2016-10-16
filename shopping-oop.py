@@ -3,15 +3,19 @@ class Cart:
     def __init__(self):
         self._contents = dict()
 
+    def __repr__(self): # (1)
+        return "{0} {1}".format(Cart, self.__dict__) # (2) and # (3)
+
+
     def process(self, order):
         if order.add:
-            if not order.item in self._contents: # (4)
-                self._contents[order.item] = 0 # (5)
-            self._contents[order.item] += 1 # (6)
-        elif order.delete: # (7)
+            if not order.item in self._contents:
+                self._contents[order.item] = 0
+            self._contents[order.item] += 1
+        elif order.delete:
             if order.item in self._contents:
                 self._contents[order.item] -= 1
-                if self._contents[order.item] <= 0: # (8)
+                if self._contents[order.item] <= 0:
                     del self._contents[order.item]
 
 
@@ -67,14 +71,9 @@ while not order.quit:
     order = Order()
     order.get_input()
 
-# (1) How to access order.add, order.delete, in cart? Currently, order doesn't expose an item so let's add an item attribute, and I'll set it to the None object
-# (1i) The none object means it's not pointing to anything significant
-# (2) And we'll add a self on the item string
-# (3) And we'll essentially need to implement this logic from def add_to_cart, but now instead of taking an item parameter, we'll get the item from the order...
-# (3) ...and instead of taking the cart parameter, we're gonna use the dict that is internal inside of the Cart, the _contents.
-# (3) The 1st thing that add_to_cart did was if the item was corrently not in the cart, it would att that item with initial qty 0, and then every time we add something we increment it by 1
-# (4) that logic in Cart.process would look something like this, if the item is not in the contents, add it by...
-# (5) ...indexing into it, [order.item] is my key, 0 is my value
-# (6) And now I'll copy that line of code, because what we need to do here, after we're sure that that item is in the cart, let's pull it out and add one to it.
-# (7) And now delete is self-explanatory
-# (8) Finally, check if the item is at zero in the order.delete, and if it is, remove it completely from the dictionary
+# (1) let's display the cart contents to the user using special attributes and special methods in a python object (e.g. __init__), namely __repr__, by overriding its behavior
+# (2) in python, you can convert almost anything to a string (that's the return "*" bit)
+# (3) we'l use __dict__ here, because with it, you can dump out everything that is inside of an object, including exposed and hidden ones
+# (3) so we can test __dict__ byt exposing order ( order.__dict__) - this is literally a dictionary tath is returned, so I can index into it and I'll try to get the value for the key "quit"
+# (3) ...like this: order.__dict__["quit"], and right now it will tell me that that value is true. So it might be useful when producing this representation just to dump it out, like this:
+# (3) self.__dict__
